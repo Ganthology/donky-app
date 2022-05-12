@@ -39,7 +39,7 @@ function CardItem({ title, description, imageSrc, price }: CardItem) {
         <p className='font-medium'>{title}</p>
         <p className='text-zinc-400 text-sm sm:block hidden'>{description}</p>
       </div>
-      <p className='font-semibold text-base ml-auto'>${price.toFixed(2)}</p>
+      <p className='font-semibold text-base ml-auto'>RM {price.toFixed(2)}</p>
     </div>
   )
 }

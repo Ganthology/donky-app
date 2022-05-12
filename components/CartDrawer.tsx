@@ -85,7 +85,7 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
                     />
                   </div>
                   <div className='px-2'>
-                    <h1 className='text-base font-medium'>Bulgogi</h1>
+                    <h1 className='text-base font-medium'>Jajangmyeon</h1>
                     <p className='text-xs text-stone-400'>x1</p>
                     <div className='flex space-x-2 py-2'>
                       <a className='text-sm font-light text-indigo-400 hover:underline hover:cursor-pointer'>
