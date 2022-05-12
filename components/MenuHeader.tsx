@@ -4,13 +4,10 @@ import {
   createStyles,
   Header,
   Container,
-  Group,
-  Burger,
   Paper,
   Transition,
 } from '@mantine/core'
 import { useBooleanToggle } from '@mantine/hooks'
-import DonkyLogo from '../public/donkyLogo.png'
 import { MenuDrawer } from './MenuDrawer'
 import { CartDrawer } from './CartDrawer'
 
@@ -129,17 +126,6 @@ export function MenuHeader({ links }: MenuHeaderProps) {
     <Header height={HEADER_HEIGHT} mb={25} className={`${classes.root} sticky`}>
       <Container className={classes.header} size='sm' px='xs'>
         <MenuDrawer opened={menuOpened} setOpened={toggleMenuOpened} />
-        {/* <Group spacing={5} className={classes.links}>
-          {items}
-        </Group> */}
-
-        <Burger
-          opened={opened}
-          onClick={() => toggleOpened()}
-          className={classes.burger}
-          size='sm'
-        />
-
         <Transition transition='pop-top-right' duration={200} mounted={opened}>
           {(styles) => (
             <Paper className={classes.dropdown} withBorder style={styles}>
