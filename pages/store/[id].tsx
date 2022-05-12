@@ -82,11 +82,11 @@ const Store = () => {
             <h1 className='font-semibold'>Delivery Info</h1>
             <div className='flex justify-between items-center'>
               <p>Minimum Order</p>
-              <p className='font-semibold text-base'>$10.00</p>
+              <p className='font-semibold text-base'>RM10.00</p>
             </div>
             <div className='flex justify-between items-center'>
               <p>Delivery Fee</p>
-              <p className='font-semibold text-base'>$10.00</p>
+              <p className='font-semibold text-base'>RM10.00</p>
             </div>
           </div>
           <h1 className='text-2xl font-semibold pt-4'>Special Deals</h1>
@@ -111,7 +111,7 @@ const Store = () => {
                 <Text className='text-xl font-medium pt-2'>Tangsuyuk</Text>
 
                 <Text size='sm' className='pt-2 pb-2'>
-                  $10.00
+                  RM10.00
                 </Text>
               </Card>
             ))}
