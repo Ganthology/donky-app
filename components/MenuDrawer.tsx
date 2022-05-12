@@ -1,7 +1,7 @@
 import React from 'react'
-import { Drawer, Button, Group, ActionIcon } from '@mantine/core'
+import { Drawer } from '@mantine/core'
 import { SetStateAction } from 'react'
-import { Menu2 } from 'tabler-icons-react'
+import { Burger } from '@mantine/core'
 
 interface MenuDrawerProps {
   opened: boolean
@@ -20,12 +20,7 @@ export function MenuDrawer({ opened, setOpened }: MenuDrawerProps) {
       >
         {/* Drawer content */}
       </Drawer>
-
-      <Group position='center'>
-        <ActionIcon onClick={() => setOpened(true)}>
-          <Menu2 />
-        </ActionIcon>
-      </Group>
+      <Burger opened={opened} onClick={() => setOpened(true)} />
     </>
   )
 }
