@@ -1,9 +1,43 @@
 import { MenuHeader } from '../../components/MenuHeader'
 import { Container, Avatar, Image, Card, Text } from '@mantine/core'
+import { showNotification } from '@mantine/notifications'
 import { default as NextImage } from 'next/image'
 import DonkyLogo from '../../public/donkyLogo.png'
+import BulgogiImage from '../../public/beef-bulgogi-featured-pic.webp'
+import { CardItem, SectionCard } from '../../components/SectionCard'
 
 const Store = () => {
+  const firstSectionItem: CardItem[] = [
+    {
+      title: 'Bulgogi',
+      description:
+        'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
+      price: 29.99,
+      imageSrc: BulgogiImage,
+    },
+    {
+      title: 'Bulgogi',
+      description:
+        'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
+      price: 29.99,
+      imageSrc: BulgogiImage,
+    },
+    {
+      title: 'Bulgogi',
+      description:
+        'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
+      price: 29.99,
+      imageSrc: BulgogiImage,
+    },
+    {
+      title: 'Bulgogi',
+      description:
+        'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
+      price: 29.99,
+      imageSrc: BulgogiImage,
+    },
+  ]
+
   return (
     <div className='bg-stone-100'>
       <MenuHeader
@@ -16,7 +50,7 @@ const Store = () => {
         <div className='mx-auto w-full'>
           <Image
             radius='md'
-            src='https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80'
+            src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/71047d71792663.5bd138a0f089b.jpg'
             alt='Random unsplash image'
             fit='cover'
             height={250}
@@ -24,10 +58,12 @@ const Store = () => {
         </div>
         <Avatar
           className='mx-auto border-4 border-stone-100 h-32 w-32 -mt-24 rounded-full'
-          src='https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=250&q=80'
+          src='https://media.timeout.com/images/102523828/image.jpg'
         />
 
-        <h1 className='text-3xl font-bold text-center'>Store Name</h1>
+        <h1 className='text-3xl font-bold text-center pt-4 pb-8'>
+          Han-sik-tang
+        </h1>
 
         <div className='space-y-4 font-normal text-sm'>
           <div
@@ -39,11 +75,17 @@ const Store = () => {
             }}
           />
           <div className='bg-zinc-50 px-4 py-4 rounded-md drop-shadow-sm space-y-4'>
-            <h1>Delivery Info</h1>
-            <p>Minimum Order</p>
-            <p>Delivery Fee</p>
+            <h1 className='font-semibold'>Delivery Info</h1>
+            <div className='flex justify-between items-center'>
+              <p>Minimum Order</p>
+              <p className='font-semibold text-base'>$10.00</p>
+            </div>
+            <div className='flex justify-between items-center'>
+              <p>Delivery Fee</p>
+              <p className='font-semibold text-base'>$10.00</p>
+            </div>
           </div>
-          <h1 className='text-2xl font-semibold'>Special Deals</h1>
+          <h1 className='text-2xl font-semibold pt-4'>Special Deals</h1>
           <div className='flex flex-no-wrap overflow-x-scroll scrolling-touch items-start space-x-4'>
             {[1, 2, 3, 4, 5].map((item) => (
               <Card
@@ -55,34 +97,22 @@ const Store = () => {
               >
                 <Card.Section>
                   <Image
-                    src='https://images.unsplash.com/photo-1511216335778-7cb8f49fa7a3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80'
+                    src='https://upload.wikimedia.org/wikipedia/commons/4/4d/Tangsuyuk_%28Korean_Chinese_sweet_and_sour_pork%29.jpg'
                     height={160}
                     alt='No way!'
+                    fit='cover'
                   />
                 </Card.Section>
 
-                <Text weight={500} size='lg'>
-                  You've won a million dollars in cash!
-                </Text>
+                <Text className='text-xl font-medium pt-2'>Tangsuyuk</Text>
 
-                <Text size='sm'>
-                  Please click anywhere on this card to claim your reward, this
-                  is not a fraud, trust us
+                <Text size='sm' className='pt-2 pb-2'>
+                  $10.00
                 </Text>
               </Card>
             ))}
           </div>
-          {[1, 2, 3].map((item) => (
-            <div
-              className='bg-zinc-50 px-4 py-4 rounded-md drop-shadow-sm space-y-4'
-              key={item}
-            >
-              <h1>Section Name</h1>
-              <p>Item Card</p>
-              <p>Item Card 2</p>
-              <p>Item Card 3</p>
-            </div>
-          ))}
+          <SectionCard title='Main Dish' items={firstSectionItem} />
           <footer className='text-center'>
             <NextImage
               src={DonkyLogo}
