@@ -83,7 +83,7 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
             </div>
             <Divider my={10} variant='dotted' />
             <div className='text-center' onClick={nextStep}>
-              <a className='bg-indigo-500 px-52 py-2 rounded-md text-zinc-50 font-semibold drop-shadow-sm cursor-pointer'>
+              <a className='bg-indigo-500 px-28 py-2 rounded-md text-zinc-50 font-semibold drop-shadow-sm cursor-pointer'>
                 Next
               </a>
             </div>
@@ -107,7 +107,7 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
                 <TimeInput label='Pickup Time' />
               </div>
               <div className='text-center' onClick={nextStep}>
-                <a className='bg-indigo-500 px-52 py-2 rounded-md text-zinc-50 font-semibold drop-shadow-sm cursor-pointer'>
+                <a className='bg-indigo-500 px-28 py-2 rounded-md text-zinc-50 font-semibold drop-shadow-sm cursor-pointer'>
                   Next
                 </a>
               </div>
@@ -142,15 +142,17 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
                 <p>RM 27.00</p>
               </div>
             </div>
-            <Link href={generateLink()}>
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                className='w-full bg-green-600 px-44 py-2 rounded-md text-zinc-50 font-semibold drop-shadow-sm cursor-pointer'
-              >
-                Make Order
-              </a>
-            </Link>
+            <div className='text-center'>
+              <Link href={generateLink()}>
+                <a
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='w-full bg-green-600 px-28 py-2 rounded-md text-zinc-50 font-semibold drop-shadow-sm cursor-pointer'
+                >
+                  Make Order
+                </a>
+              </Link>
+            </div>
           </Stepper.Step>
           <Stepper.Completed>
             Completed, click back button to get to previous step
