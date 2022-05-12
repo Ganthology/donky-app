@@ -16,6 +16,7 @@ import { DatePicker, TimeInput } from '@mantine/dates'
 import { SetStateAction } from 'react'
 import { ShoppingCart } from 'tabler-icons-react'
 import BulgogiImage from '../public/beef-bulgogi-featured-pic.webp'
+import Jajangmyeon from '../public/jajangmyeon.jpg'
 interface CartDrawerProps {
   opened: boolean
   setOpened: React.Dispatch<SetStateAction<boolean>>
@@ -23,7 +24,8 @@ interface CartDrawerProps {
 
 function generateLink() {
   let number = '+60184646079'
-  let message = 'test'
+  let message =
+    'Hi+Han-sik-tang%0D%0A%0D%0ACheck+my+order+at+https%3A%2F%2Fdonky-app.vercel.app%2Forder%2F67781%0D%0A%0D%0AOrder+code%3A+%2367781%0D%0ADate%3A+May+11%2C2022%0D%0ATime%3A+2%3A00+p.m.%0D%0APayment+Status%3A+Paid%0D%0A%0D%0AOrder+confirmation%3A%0D%0A---------------%0D%0A1+x+Jajangmyeon+MYR+29.99%0D%0A%0D%0A1+x+Bulgogi++++++++MYR+29.99%0D%0A%0D%0ADelivery+++++++++++++MYR+10.00%0D%0A--------------%0D%0ATotal%3A+MYR+69.98+%28Qty%3A2%29%0D%0A+%0D%0ACustomer+Details%3A%0D%0AZi+Yi+%2B60123456789%0D%0A%0D%0APickup%3A%0D%0ARestaurant+Han-sik-tang'
   let url = 'https://wa.me/'
   return `${url}${number}?text=${message}`
 }
@@ -49,37 +51,59 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
           <Stepper.Step label='Cart'>
             <h1 className='text-lg font-medium'>Your Items</h1>
             <div className='pb-2'>
-              {[1, 2, 3].map((i) => (
-                <div className='flex pt-2 justify-between' key={i}>
-                  <div className='flex'>
-                    <div className=' w-20 h-20'>
-                      <Image
-                        src={BulgogiImage}
-                        alt='food image'
-                        className='rounded-lg'
-                      />
-                    </div>
-                    <div className='px-2'>
-                      <h1 className='text-base font-medium'>Bulgogi</h1>
-                      <p className='text-xs text-stone-400'>x1</p>
-                      <div className='flex space-x-2 py-2'>
-                        <a className='text-sm font-light text-indigo-400 hover:underline hover:cursor-pointer'>
-                          Edit
-                        </a>
-                        <a className='text-sm font-light text-stone-400 hover:underline hover:cursor-pointer'>
-                          Remove
-                        </a>
-                      </div>
+              <div className='flex pt-2 justify-between'>
+                <div className='flex'>
+                  <div className=' w-20 h-20'>
+                    <Image
+                      src={BulgogiImage}
+                      alt='food image'
+                      className='rounded-lg'
+                    />
+                  </div>
+                  <div className='px-2'>
+                    <h1 className='text-base font-medium'>Bulgogi</h1>
+                    <p className='text-xs text-stone-400'>x1</p>
+                    <div className='flex space-x-2 py-2'>
+                      <a className='text-sm font-light text-indigo-400 hover:underline hover:cursor-pointer'>
+                        Edit
+                      </a>
+                      <a className='text-sm font-light text-stone-400 hover:underline hover:cursor-pointer'>
+                        Remove
+                      </a>
                     </div>
                   </div>
-                  <p>RM 10.00</p>
                 </div>
-              ))}
+                <p>RM 29.99</p>
+              </div>
+              <div className='flex pt-2 justify-between'>
+                <div className='flex'>
+                  <div className=' w-20 h-20'>
+                    <Image
+                      src={Jajangmyeon}
+                      alt='food image'
+                      className='rounded-lg'
+                    />
+                  </div>
+                  <div className='px-2'>
+                    <h1 className='text-base font-medium'>Bulgogi</h1>
+                    <p className='text-xs text-stone-400'>x1</p>
+                    <div className='flex space-x-2 py-2'>
+                      <a className='text-sm font-light text-indigo-400 hover:underline hover:cursor-pointer'>
+                        Edit
+                      </a>
+                      <a className='text-sm font-light text-stone-400 hover:underline hover:cursor-pointer'>
+                        Remove
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <p>RM 29.99</p>
+              </div>
             </div>
             <Divider my={10} variant='dotted' />
             <div className='flex justify-between'>
               <h1>Total</h1>
-              <p>RM 30.00</p>
+              <p>RM 59.98</p>
             </div>
             <Divider my={10} variant='dotted' />
             <div className='text-center' onClick={nextStep}>
@@ -118,15 +142,15 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
               <h1 className='text-lg font-medium'>Order Summary</h1>
               <div className='flex justify-between text-sm font-light'>
                 <h2>Items Total</h2>
-                <p>RM 9.00</p>
+                <p>RM 59.98</p>
               </div>
               <div className='flex justify-between text-sm font-light'>
                 <h2>Misc.</h2>
-                <p>RM 9.00</p>
+                <p>RM 0.00</p>
               </div>{' '}
               <div className='flex justify-between text-sm font-light pb-4'>
                 <h2>Delivery</h2>
-                <p>RM 9.00</p>
+                <p>RM 10.00</p>
               </div>
               <a className='text-xs bg-indigo-200 text-indigo-600 px-2 py-1 rounded-full hover:underline hover:cursor-pointer'>
                 Enter Discount Code
@@ -134,12 +158,12 @@ export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
               <Divider my='sm' variant='dotted' />
               <div className='flex justify-between text-sm font-light'>
                 <h2>Subtotal</h2>
-                <p>RM 9.00</p>
+                <p>RM 69.98</p>
               </div>
               <Divider my='sm' variant='dotted' />
               <div className='flex justify-between text-base'>
                 <h2>Total</h2>
-                <p>RM 27.00</p>
+                <p>RM 69.98</p>
               </div>
             </div>
             <div className='text-center'>

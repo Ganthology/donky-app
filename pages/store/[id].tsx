@@ -4,6 +4,10 @@ import { showNotification } from '@mantine/notifications'
 import { default as NextImage } from 'next/image'
 import DonkyLogo from '../../public/donkyLogo.png'
 import BulgogiImage from '../../public/beef-bulgogi-featured-pic.webp'
+import Jajangmyeon from '../../public/jajangmyeon.jpg'
+import Gimbap from '../../public/Vegetable_gimbap.jpg'
+import Bibimbap from '../../public/bibimbap.jpg'
+
 import { CardItem, SectionCard } from '../../components/SectionCard'
 
 const Store = () => {
@@ -11,30 +15,30 @@ const Store = () => {
     {
       title: 'Bulgogi',
       description:
-        'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
+        'Thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
       price: 29.99,
       imageSrc: BulgogiImage,
     },
     {
-      title: 'Bulgogi',
+      title: 'Jajangmyeon',
       description:
         'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
       price: 29.99,
-      imageSrc: BulgogiImage,
+      imageSrc: Jajangmyeon,
     },
     {
-      title: 'Bulgogi',
+      title: 'Bibimbap',
       description:
         'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
-      price: 29.99,
-      imageSrc: BulgogiImage,
+      price: 19.99,
+      imageSrc: Bibimbap,
     },
     {
-      title: 'Bulgogi',
+      title: 'Gimbap',
       description:
         'thinly sliced beef marinated in a sauce that is a mix of soy sauce, sugar or honey, sesame oil, garlic, onion, and pureed Asian pear.',
-      price: 29.99,
-      imageSrc: BulgogiImage,
+      price: 9.99,
+      imageSrc: Gimbap,
     },
   ]
 

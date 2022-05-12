@@ -26,17 +26,18 @@ function CardItem({ title, description, imageSrc, price }: CardItem) {
         })
       }
     >
-      <div className=' w-20 h-20'>
+      <div className='w-24 h-16 relative'>
         <Image
           src={imageSrc}
           alt='food image'
           className='rounded-lg'
-          placeholder='blur'
+          objectFit='cover'
+          layout='fill'
         />
       </div>
       <div className='ml-4'>
         <p className='font-medium'>{title}</p>
-        <p className='text-zinc-400 text-sm'>{description}</p>
+        <p className='text-zinc-400 text-sm sm:block hidden'>{description}</p>
       </div>
       <p className='font-semibold text-base ml-auto'>${price.toFixed(2)}</p>
     </div>
