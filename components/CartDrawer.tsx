@@ -29,7 +29,7 @@ function generateLink() {
 }
 
 export function CartDrawer({ opened, setOpened }: CartDrawerProps) {
-  const [active, setActive] = React.useState(1)
+  const [active, setActive] = React.useState(0)
   const nextStep = () =>
     setActive((current) => (current < 3 ? current + 1 : current))
   const prevStep = () =>
