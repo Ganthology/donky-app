@@ -100,6 +100,14 @@ const System = () => {
           image: 'https://media.timeout.com/images/102523828/image.jpg',
         }}
         tabs={['Menu', 'All Orders', 'Paid Orders', 'Pending Orders', 'Others']}
+        routes={[
+          '/system/demo',
+          '/system/demo-orders',
+          '/system/demo-orders',
+          '/system/demo-orders',
+          '/system/demo',
+        ]}
+        currentTab={0}
       />
       <Container className='space-y-2 pb-16'>
         <div className='bg-stone-100 px-4 py-4 rounded-md text-sm font-light'>

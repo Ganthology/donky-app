@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import {
   createStyles,
   Container,
@@ -104,12 +105,20 @@ const useStyles = createStyles((theme) => ({
 interface HeaderTabsProps {
   user: { name: string; image: string }
   tabs: string[]
+  routes: string[]
+  currentTab: number
 }
 
-export function HeaderTabs({ user, tabs }: HeaderTabsProps) {
+export function HeaderTabs({
+  user,
+  tabs,
+  routes,
+  currentTab,
+}: HeaderTabsProps) {
   const { classes, theme, cx } = useStyles()
   const [opened, toggleOpened] = useBooleanToggle(false)
   const [userMenuOpened, setUserMenuOpened] = useState(false)
+  const router = useRouter()
 
   const items = tabs.map((tab) => <Tabs.Tab label={tab} key={tab} />)
 
@@ -202,6 +211,10 @@ export function HeaderTabs({ user, tabs }: HeaderTabsProps) {
             tabControl: classes.tabControl,
             tabActive: classes.tabControlActive,
           }}
+          onTabChange={(tabIndex: number, tabKey?: string) => {
+            router.push(routes[tabIndex])
+          }}
+          initialTab={currentTab}
         >
           {items}
         </Tabs>

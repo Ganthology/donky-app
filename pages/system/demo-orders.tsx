@@ -25,6 +25,14 @@ const SystemOrder = () => {
           image: 'https://media.timeout.com/images/102523828/image.jpg',
         }}
         tabs={['Menu', 'All Orders', 'Paid Orders', 'Pending Orders', 'Others']}
+        routes={[
+          '/system/demo',
+          '/system/demo-orders',
+          '/system/demo-orders',
+          '/system/demo-orders',
+          '/system/demo',
+        ]}
+        currentTab={1}
       />
       <Container className='space-y-2'>
         <div className='border-zinc-300 space-y-2 pb-4 border-b'>
